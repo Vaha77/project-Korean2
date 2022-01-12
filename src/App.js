@@ -6,12 +6,25 @@ import New from "./pages/New";
 import Edit from "./pages/Edit";
 import Diary from "./pages/Diary";
 import MyButton from "./Components/MyButton";
+import MyHeader from "./Components/MyHeader";
 export const App = () => {
   // const env = process.env;
   // env.PUBLIC_URL = env.PUBLIC_URL || "";
   return (
     <BrowserRouter>
       <div className="App">
+        <MyHeader
+          hedText={"App"}
+          leftChild={
+            <MyButton text={"왼쪽 버튼"} onClick={() => alert("왼쪽 글릭")} />
+          }
+          rightChild={
+            <MyButton
+              text={"오른 쪽버튼"}
+              onClick={() => alert("오른쪽 글릭")}
+            />
+          }
+        />
         <h1>App</h1>
         {/* <img src={process.env.PUBLIC_URL + `/assets/emotion1.png`} />
         <img src={process.env.PUBLIC_URL + `/assets/emotion2.png`} />
@@ -31,11 +44,6 @@ export const App = () => {
         />
 
         <MyButton text={"버튼"} onClick={() => alert("버튼 틀릭")} />
-        <MyButton
-          text={"버튼"}
-          onClick={() => alert("버튼 틀릭")}
-          type={"cscscscscs"}
-        />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/new" element={<New />} />
